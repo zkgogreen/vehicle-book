@@ -1,8 +1,10 @@
 package com.bengkel.booking.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import com.bengkel.booking.models.BookingOrder;
 import com.bengkel.booking.models.Customer;
 import com.bengkel.booking.models.ItemService;
 import com.bengkel.booking.repositories.CustomerRepository;
@@ -11,18 +13,18 @@ import com.bengkel.booking.repositories.ItemServiceRepository;
 public class MenuService {
 	private static List<Customer> listAllCustomers = CustomerRepository.getAllCustomer();
 	private static List<ItemService> listAllItemService = ItemServiceRepository.getAllItemService();
+	private static List<BookingOrder> listAllBookingOrder = new ArrayList<>();
 	private static Scanner input = new Scanner(System.in);
+	private static Customer customer = new Customer();
 	public static void run() {
-		boolean isLooping = true;
-		do {
-//			login();
-			mainMenu();
-		} while (isLooping);
-		
+        do {
+			customer = login();
+            mainMenu();
+        } while (true);
 	}
 
-	public static void login() {
-
+	public static Customer login() {
+		Customer customer =  new Customer();
 		int attempts = 3;
 		while (true){
 			System.out.print("Masukan Customer ID : ");
@@ -31,10 +33,12 @@ public class MenuService {
 			String password = input.nextLine();
 
 			attempts--;
-			if(BengkelService.login(listAllCustomers, customerID, password)){break;}
+			customer = BengkelService.login(listAllCustomers, customerID, password);
+			if(customer != null){break;}
 			if(attempts == 0){System.exit(0);}
 
 		}
+		return customer;
 	}
 	
 	public static void mainMenu() {
@@ -53,13 +57,14 @@ public class MenuService {
 				BengkelService.infoCustomer(listAllCustomers);
 				break;
 			case 2:
-				BengkelService.Booking(listAllCustomers);
+				listAllBookingOrder.add(BengkelService.Booking(listAllBookingOrder, listAllCustomers, listAllItemService));
 				break;
 			case 3:
 				BengkelService.TopUp(listAllCustomers);
 				break;
 			case 4:
 				//panggil fitur Informasi Booking Order
+				BengkelService.listBooking(listAllBookingOrder, customer);
 				break;
 			default:
 				System.out.println("Logout");
