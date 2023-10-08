@@ -1,13 +1,13 @@
 # vehicle-book
 
-##Fitur Login
+## Fitur Login
 Agar dapat memasuki aplikasi Booking Bengkel, maka harus dapat Login menggunakan CustomerId dan Password.
 Jika CustomerId dan Password Sesuai maka akan masuk ke Home Menu Aplikasi Booking Bengkel.
 Jika CustomerId tidak Tersedia atau Tidak Ditemukan, maka akan mengeluarkan Notifikasi Bahwa "Customer Id Tidak Ditemukan atau Salah!"
 Jika Password Salah, maka akan mengeluarkan Notifikasi Bahawa "Password yang anda Masukan Salah!"
 Jika terjadi kesalahan dalam memasukan Customer Id atau Password sebanyak "Tiga Kali", maka Aplikasi Akan berhenti atau Exit.
 
-##Fitur Informasi Customer/Profile
+## Fitur Informasi Customer/Profile
 Fitur untuk menampilkan Informasi data Customer/Profile yang sama saat Login. Contoh Ketika di awal Login menggunakan Cust-001, maka Data yang ditampilkan adalah keseluruhan Data Cust-001.
 Data yang harus ditampilkan pada Fitur Informasi Customer/Profile adalah:
 Customer Id
@@ -18,7 +18,7 @@ Saldo Koin (Hanya untuk Member)
 List Kendaraan
 
 
-##Fitur Booking Bengkel
+## Fitur Booking Bengkel
 Fitur untuk booking service Bengkel yang dapat Customer Lakukan.
 Customer Harus memilih terlebih dahulu Kendaraan yang akan di Service, dari list kendaraan yang dia punya berdasarkan "Vehicle Id".
 Ketika Customer memasukan Vehicle Id:
@@ -39,12 +39,12 @@ Payment dengan metode Cash Tidak mendapatkan diskon.
 "Jika Customer Member, membayar menggunakan metode Saldo Coin. Maka Saldo Coin yang ada di data Customer Member tersebut akan berkurang 
 Sesuai dengan jumlah Item Service yang harus dibayar (Payment). (Hanya Berlaku Untuk Member)"
 
-##Fitur Top Up Saldo Coin
+## Fitur Top Up Saldo Coin
 Fitur untuk menambahkan Saldo Coin.
 Fitur ini hanya dapat dilakukan oleh Customer Member Saja.
 Jika Fitur ini diakses oleh Customer Non Member, maka akan menampilkan Notifikasi Pesan "Maaf fitur ini hanya untuk Member saja!".
 
-##Fitur Informasi Booking
+## Fitur Informasi Booking
 Fitur ini akan menampilkan semua Booking Order yang pernah dilakukan Oleh customer yang melakukan Login.
 Data yang harus ditampilkan pada Fitur Informasi Booking adalah:
 Booking Id
@@ -56,11 +56,11 @@ Total Payment
 Booking Date
 
 
-##Fitur Logout
+## Fitur Logout
 Fitur ini ketika dipilih maka akan kembali ke Menu Awal Aplikasi Berjalan. (Start Menu)
 
 
-##Logic
+## Logic
 Silahkan tambahkan logic untuk semua fitur di class yang ada pada package Services. 
 BengkelService
 MenuService
@@ -68,14 +68,14 @@ PrintService
 Validation
 
 
-##Catatan
+## Catatan
 Boleh menambahkan Class, method/function, serta variable lainnya diluar template Sesuai dengan Kebutuhan.
 
 
-##Repository GIT
+## Repository GIT
 https://gitlab.com/mhifahmi/booking-bengkel.git
 
 
 
-##Submission
+## Submission
 Push hasil pengerjaan ke Repository Git Masing-masing. Kemudian share lilnk Repository ke Group WA.
